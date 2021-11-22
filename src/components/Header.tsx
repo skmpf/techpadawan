@@ -8,7 +8,7 @@ const Header = () => {
     <HStack as="header" w="full" mb={12} justifyContent="space-between">
       <Heading as="h1" size="lg">
         <NextLink href="/">
-          <Link>TechPadawan</Link>
+          <Link textDecoration="none">TechPadawan</Link>
         </NextLink>
       </Heading>
       <Button>
