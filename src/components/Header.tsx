@@ -13,7 +13,11 @@ const Header = () => {
           <Link textDecoration="none">TechPadawan</Link>
         </NextLink>
       </Heading>
-      <IconButton onClick={toggleColorMode} aria-label="ColorMode Switch">
+      <IconButton
+        onClick={toggleColorMode}
+        aria-label="ColorMode Switch"
+        bg="none"
+      >
         {colorMode === "light" ? (
           <MoonIcon boxSize={5} />
         ) : (
