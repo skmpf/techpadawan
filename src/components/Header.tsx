@@ -1,6 +1,6 @@
 import NextLink from "next/link";
 import { Heading, HStack } from "@chakra-ui/layout";
-import { Button, Link, useColorMode } from "@chakra-ui/react";
+import { IconButton, Link, useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 const Header = () => {
@@ -13,20 +13,13 @@ const Header = () => {
           <Link textDecoration="none">TechPadawan</Link>
         </NextLink>
       </Heading>
-      <Button
-        onClick={toggleColorMode}
-        bg="none"
-        border="none"
-        _active={{ bg: "none" }}
-        _focus={{ outline: "none" }}
-        _hover={{ bg: "none" }}
-      >
+      <IconButton onClick={toggleColorMode} aria-label="ColorMode Switch">
         {colorMode === "light" ? (
           <MoonIcon boxSize={5} />
         ) : (
           <SunIcon boxSize={5} />
         )}
-      </Button>
+      </IconButton>
     </HStack>
   );
 };
