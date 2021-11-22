@@ -5,15 +5,15 @@ import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 const Header = () => {
   return (
-    <HStack as="header" w="full" justifyContent="space-between">
-      <Heading as="h1">
+    <HStack as="header" w="full" mb={12} justifyContent="space-between">
+      <Heading as="h1" size="lg">
         <NextLink href="/">
           <Link>TechPadawan</Link>
         </NextLink>
       </Heading>
       <Button>
-        <SunIcon boxSize={6} />
-        <MoonIcon boxSize={6} />
+        <SunIcon boxSize={5} />
+        <MoonIcon boxSize={5} />
       </Button>
     </HStack>
   );
