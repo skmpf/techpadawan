@@ -5,7 +5,7 @@ const Footer = () => {
   const router = useRouter();
 
   return (
-    <VStack as="footer" mt={12} align="flex-start">
+    <VStack as="footer" mt={20} align="flex-start">
       <HStack>
         <Link
           variant={router.pathname === "/" && "brand"}

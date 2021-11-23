@@ -7,6 +7,7 @@ const Aside = () => {
 
   return (
     <HStack as="aside" w="full" h="full" spacing={3} mb={8}>
+      {/* TODO replace image component by next image component for optimization */}
       <Image
         borderRadius="full"
         boxSize="3.5rem"
