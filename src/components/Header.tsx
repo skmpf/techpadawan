@@ -1,16 +1,27 @@
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 import { Heading, HStack } from "@chakra-ui/layout";
 import { IconButton, Link, useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const router = useRouter();
 
   return (
     <HStack as="header" w="full" mb={12} justifyContent="space-between">
-      <Heading as="h1" size="lg" fontWeight="900">
+      <Heading
+        as={router.pathname === "/" ? "h1" : "h3"}
+        size={router.pathname === "/" ? "lg" : "md"}
+        fontWeight="900"
+      >
         <NextLink href="/">
-          <Link textDecoration="none">TechPadawan</Link>
+          <Link
+            variant={router.pathname === "/" ? "header" : "brand"}
+            textDecoration="none"
+          >
+            TechPadawan
+          </Link>
         </NextLink>
       </Heading>
       <IconButton

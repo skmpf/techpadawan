@@ -1,7 +1,10 @@
+import { useRouter } from "next/router";
 import { HStack, Text } from "@chakra-ui/layout";
 import { Image, Link } from "@chakra-ui/react";
 
 const Aside = () => {
+  const router = useRouter();
+
   return (
     <HStack as="aside" w="full" h="full" spacing={3} mb={8}>
       <Image
@@ -12,7 +15,11 @@ const Aside = () => {
       />
       <Text>
         Personal blog by{" "}
-        <Link href="https://mobile.twitter.com/thetechpadawan" isExternal>
+        <Link
+          variant={router.pathname === "/" && "brand"}
+          href="https://mobile.twitter.com/thetechpadawan"
+          isExternal
+        >
           TechPadawan
         </Link>
         <br />I write about tech, web development, and other stuff.

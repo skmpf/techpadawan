@@ -1,6 +1,5 @@
 import NextLink from "next/link";
-import { Box, Heading, Text } from "@chakra-ui/layout";
-import { Link } from "@chakra-ui/react";
+import { Box, Heading, Link, Text } from "@chakra-ui/layout";
 
 const Card = () => {
   return (
@@ -15,7 +14,9 @@ const Card = () => {
           mb={2}
         >
           <NextLink href="/">
-            <Link textDecoration="none">npm audit: Broken by Design</Link>
+            <Link variant="brand" textDecoration="none">
+              npm audit: Broken by Design
+            </Link>
           </NextLink>
         </Heading>
         <Box as="small">{new Date().toDateString()} • 14 min read</Box>
