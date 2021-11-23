@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <HStack as="header" w="full" mb={12} justifyContent="space-between">
-      <Heading as="h1" size="lg">
+      <Heading as="h1" size="lg" fontWeight="900">
         <NextLink href="/">
           <Link textDecoration="none">TechPadawan</Link>
         </NextLink>

@@ -3,7 +3,7 @@ import { Image, Link } from "@chakra-ui/react";
 
 const Aside = () => {
   return (
-    <HStack as="aside" w="full" h="full" spacing={3} mb={20}>
+    <HStack as="aside" w="full" h="full" spacing={3} mb={8}>
       <Image
         borderRadius="full"
         boxSize="3.5rem"
