@@ -1,7 +1,7 @@
 import NextLink from "next/link";
 import { Box, Heading, Link, Text } from "@chakra-ui/layout";
 
-const Card = () => {
+const Card = ({ id, title, date, spoiler }) => {
   return (
     <Box as="article">
       <Box as="header">
@@ -15,16 +15,18 @@ const Card = () => {
         >
           <NextLink href="/">
             <Link variant="brand" textDecoration="none">
-              npm audit: Broken by Design
+              {title}
             </Link>
           </NextLink>
         </Heading>
-        <Box as="small">{new Date().toDateString()} • 14 min read</Box>
+        <Box as="small">
+          {new Date(date).toLocaleDateString(undefined, {
+            dateStyle: "medium",
+          })}{" "}
+          • 14 min read
+        </Box>
       </Box>
-      <Text mb={4}>
-        Found 99 vulnerabilities (84 moderately irrelevant, 15 highly
-        irrelevant)
-      </Text>
+      <Text mb={4}>{spoiler}</Text>
     </Box>
   );
 };
