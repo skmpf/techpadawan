@@ -1,7 +1,8 @@
 import NextLink from "next/link";
 import { Box, Heading, Link, Text } from "@chakra-ui/layout";
+import readTime from "../../lib/read-time";
 
-const Card = ({ id, title, date, spoiler }) => {
+const Card = ({ id, title, date, spoiler, fileContents }) => {
   return (
     <Box as="article">
       <Box as="header">
@@ -23,7 +24,7 @@ const Card = ({ id, title, date, spoiler }) => {
           {new Date(date).toLocaleDateString(undefined, {
             dateStyle: "medium",
           })}{" "}
-          • 14 min read
+          • {readTime(fileContents)} min read
         </Box>
       </Box>
       <Text mb={4}>{spoiler}</Text>

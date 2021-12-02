@@ -19,8 +19,8 @@ const Home: NextPage = ({ allPostsData }) => {
     <>
       <Aside />
       <VStack as="content" w="full" h="full" alignItems="flex-start">
-        {allPostsData.map((data) => (
-          <Card key={data.id} {...data} />
+        {allPostsData.map((postData) => (
+          <Card key={postData.id} {...postData} />
         ))}
       </VStack>
     </>
