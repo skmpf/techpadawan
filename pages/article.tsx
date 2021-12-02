@@ -1,8 +1,8 @@
 import { Link, Text } from "@chakra-ui/layout";
 import type { NextPage } from "next";
 
-import Aside from "../src/components/Aside";
-import Card from "../src/components/Card";
+import Aside from "../components/Aside";
+import Card from "../components/Card";
 
 const Home: NextPage = () => {
   return (

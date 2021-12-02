@@ -1,6 +1,6 @@
 import NextLink from "next/link";
 import { Box, Heading, Link, Text } from "@chakra-ui/layout";
-import readTime from "../../lib/read-time";
+import readTime from "../lib/read-time";
 
 const Card = ({ id, title, date, spoiler, fileContents }) => {
   return (

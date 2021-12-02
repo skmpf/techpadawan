@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import { VStack } from "@chakra-ui/layout";
-import Aside from "../src/components/Aside";
+import Aside from "../components/Aside";
 
 import { getSortedPostsData } from "../lib/posts";
-import Card from "../src/components/Card";
+import Card from "../components/Card";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
