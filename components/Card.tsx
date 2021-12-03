@@ -14,7 +14,7 @@ const Card = ({ id, title, date, spoiler, fileContents }) => {
           mt={8}
           mb={2}
         >
-          <NextLink href={`/posts/${id}`}>
+          <NextLink href={`/posts/${id}`} passHref>
             <Link variant="brand" textDecoration="none">
               {title}
             </Link>
