@@ -1,9 +1,10 @@
+import Head from "next/head";
 import type { NextPage } from "next";
-import { VStack } from "@chakra-ui/layout";
-import Aside from "../components/Aside";
+import { Box, VStack } from "@chakra-ui/layout";
+import Bio from "../components/Bio";
 
 import { getSortedPostsData } from "../lib/posts";
-import Card from "../components/Card";
+import ArticleCard from "../components/ArticleCard";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -17,10 +18,15 @@ export async function getStaticProps() {
 const Home: NextPage = ({ allPostsData }) => {
   return (
     <>
-      <Aside />
+      <Head>
+        <title>TechPadawan</title>
+      </Head>
+      <Box as="aside" w="full">
+        <Bio />
+      </Box>
       <VStack as="content" w="full" h="full" alignItems="flex-start">
         {allPostsData.map((postData) => (
-          <Card key={postData.id} {...postData} />
+          <ArticleCard key={postData.id} {...postData} />
         ))}
       </VStack>
     </>

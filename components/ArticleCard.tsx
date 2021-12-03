@@ -1,8 +1,8 @@
 import NextLink from "next/link";
 import { Box, Heading, Link, Text } from "@chakra-ui/layout";
-import Small from "./Small";
+import ArticleDetails from "./ArticleDetails";
 
-const Card = ({ id, title, date, spoiler, fileContents }) => {
+const ArticleCard = ({ id, title, date, spoiler, fileContents }) => {
   return (
     <Box as="article">
       <Box as="header">
@@ -20,11 +20,11 @@ const Card = ({ id, title, date, spoiler, fileContents }) => {
             </Link>
           </NextLink>
         </Heading>
-        <Small date={date} fileContents={fileContents} />
+        <ArticleDetails date={date} fileContents={fileContents} />
       </Box>
       <Text mb={4}>{spoiler}</Text>
     </Box>
   );
 };
 
-export default Card;
+export default ArticleCard;

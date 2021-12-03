@@ -2,11 +2,11 @@ import { useRouter } from "next/router";
 import { HStack, Text } from "@chakra-ui/layout";
 import { Image, Link } from "@chakra-ui/react";
 
-const Aside = () => {
+const Bio = () => {
   const router = useRouter();
 
   return (
-    <HStack as="aside" w="full" h="full" spacing={3} mb={8}>
+    <HStack w="full" h="full" spacing={3} mb={8}>
       {/* TODO replace image component by next image component for optimization */}
       <Image
         borderRadius="full"
@@ -29,4 +29,4 @@ const Aside = () => {
   );
 };
 
-export default Aside;
+export default Bio;
