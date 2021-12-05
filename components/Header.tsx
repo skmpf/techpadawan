@@ -9,7 +9,7 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <HStack as="header" w="full" mb={12} justifyContent="space-between">
+    <HStack as="header" w="full" mb={12} justify="space-between">
       <Heading
         as={router.pathname === "/" ? "h1" : "h3"}
         size={router.pathname === "/" ? "lg" : "md"}
