@@ -2,7 +2,7 @@ import Head from "next/head";
 import NextLink from "next/link";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import ArticleDetails from "../../components/ArticleDetails";
-import { Box, Heading, Text } from "@chakra-ui/layout";
+import { Box, Heading } from "@chakra-ui/layout";
 import { Link } from "@chakra-ui/react";
 import Bio from "../../components/Bio";
 
@@ -29,17 +29,19 @@ export default function Post({ postData }) {
       <Head>
         <title>{postData.title} - TechPadawan</title>
       </Head>
-      <Box as="article">
-        <Box as="header" mb={7}>
-          <Heading as="h1">{postData.title}</Heading>
-          <ArticleDetails
-            date={postData.date}
-            fileContents={postData.contentHtml}
-          />
+      <Box as="main" flexGrow={1}>
+        <Box as="article">
+          <Box as="header" mb={7}>
+            <Heading as="h1">{postData.title}</Heading>
+            <ArticleDetails
+              date={postData.date}
+              fileContents={postData.contentHtml}
+            />
+          </Box>
+          <Box dangerouslySetInnerHTML={{ __html: postData.contentHtml }}></Box>
         </Box>
-        <Text dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </Box>
-      <Box as="aside" w="full">
+      <Box as="aside" w="full" mt={24}>
         <Heading as="h3" size="md" mt={2} mb={7}>
           <NextLink href="/" passHref>
             <Link variant="brand" textDecoration="none">

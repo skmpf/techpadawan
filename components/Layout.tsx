@@ -38,9 +38,7 @@ export default function Layout({ children }) {
       <Container maxW="container.md" p={0}>
         <Flex minH="100vh" direction="column" px={5} py={10}>
           <Header />
-          <VStack as="main" flexGrow={1}>
-            {children}
-          </VStack>
+          {children}
           <Footer />
         </Flex>
       </Container>

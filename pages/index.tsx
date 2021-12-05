@@ -24,7 +24,7 @@ const Home: NextPage = ({ allPostsData }) => {
       <Box as="aside" w="full">
         <Bio />
       </Box>
-      <VStack as="content" w="full" h="full" alignItems="flex-start">
+      <VStack as="main" w="full" h="full" alignItems="flex-start" flexGrow={1}>
         {allPostsData.map((postData) => (
           <ArticleCard key={postData.id} {...postData} />
         ))}
