@@ -1,7 +1,10 @@
 import Head from "next/head";
+import NextLink from "next/link";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import ArticleDetails from "../../components/ArticleDetails";
 import { Box, Heading, Text } from "@chakra-ui/layout";
+import { Link } from "@chakra-ui/react";
+import Bio from "../../components/Bio";
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -35,6 +38,16 @@ export default function Post({ postData }) {
           />
         </Box>
         <Text dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      </Box>
+      <Box as="aside" w="full">
+        <Heading as="h3" size="md" mt={2} mb={7}>
+          <NextLink href="/" passHref>
+            <Link variant="brand" textDecoration="none">
+              TechPadawan
+            </Link>
+          </NextLink>
+        </Heading>
+        <Bio />
       </Box>
     </>
   );

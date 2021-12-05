@@ -15,7 +15,7 @@ const Header = () => {
         size={router.pathname === "/" ? "lg" : "md"}
         fontWeight="900"
       >
-        <NextLink href={"/"} passHref>
+        <NextLink href="/" passHref>
           <Link
             variant={router.pathname === "/" ? "header" : "brand"}
             textDecoration="none"
