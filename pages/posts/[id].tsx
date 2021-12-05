@@ -27,10 +27,10 @@ export default function Post({ postData }) {
   return (
     <>
       <Head>
-        <title>TechPadawan | {postData.title}</title>
+        <title>{postData.title} - TechPadawan</title>
       </Head>
       <Box as="article">
-        <Box as="header">
+        <Box as="header" mb={7}>
           <Heading as="h1">{postData.title}</Heading>
           <ArticleDetails
             date={postData.date}
