@@ -1,4 +1,4 @@
-import readTime from "../lib/read-time";
+import readingTime from "reading-time";
 import { Box } from "@chakra-ui/layout";
 
 const ArticleDetails = ({ date, fileContents }) => {
@@ -7,7 +7,7 @@ const ArticleDetails = ({ date, fileContents }) => {
       {new Date(date).toLocaleDateString(undefined, {
         dateStyle: "medium",
       })}{" "}
-      • {readTime(fileContents)} min read
+      • {Math.ceil(readingTime(fileContents).minutes)} min read
     </Box>
   );
 };
