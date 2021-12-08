@@ -15,9 +15,7 @@ const ArticleCard = ({ id, title, date, spoiler, fileContents }) => {
           mb={2}
         >
           <NextLink href={`/posts/${id}`} passHref>
-            <Link variant="brand" textDecoration="none">
-              {title}
-            </Link>
+            <Link textDecoration="none">{title}</Link>
           </NextLink>
         </Heading>
         <ArticleDetails date={date} fileContents={fileContents} />

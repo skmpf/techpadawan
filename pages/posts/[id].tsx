@@ -61,7 +61,7 @@ export default function Post({ source, frontMatter, fileContents }) {
           </Box>
           <Box mt={8}>
             <NextLink href="/" passHref>
-              <Link textDecoration="none">← Back to home</Link>
+              <Link>← Back to home</Link>
             </NextLink>
           </Box>
         </Box>
@@ -69,9 +69,7 @@ export default function Post({ source, frontMatter, fileContents }) {
       <Box as="aside" w="full" mt={24}>
         <Heading as="h3" size="md" mt={2} mb={7}>
           <NextLink href="/" passHref>
-            <Link variant="brand" textDecoration="none">
-              TechPadawan
-            </Link>
+            <Link textDecoration="none">TechPadawan</Link>
           </NextLink>
         </Heading>
         <Bio />

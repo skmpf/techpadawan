@@ -17,7 +17,7 @@ const theme = extendTheme({
   components: {
     Link: {
       baseStyle: (props) => ({
-        color: mode("brand.100", "whiteAlpha.900")(props),
+        color: mode("brand.100", "brand.200")(props),
         textDecoration: "underline",
         _hover: {
           textDecoration: "none",
@@ -26,9 +26,6 @@ const theme = extendTheme({
       variants: {
         header: (props) => ({
           color: mode("gray.800", "whiteAlpha.900")(props),
-        }),
-        brand: (props) => ({
-          color: mode("brand.100", "brand.200")(props),
         }),
       },
     },

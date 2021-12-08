@@ -16,11 +16,7 @@ const Bio = () => {
       />
       <Text>
         Personal blog by{" "}
-        <Link
-          variant={router.pathname === "/" && "brand"}
-          href="https://mobile.twitter.com/thetechpadawan"
-          isExternal
-        >
+        <Link href="https://mobile.twitter.com/thetechpadawan" isExternal>
           TechPadawan
         </Link>
         <br />I write about tech, web development, and other stuff.
