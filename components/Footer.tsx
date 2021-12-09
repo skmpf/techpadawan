@@ -11,7 +11,7 @@ const Footer = () => {
           twitter
         </Link>
       </Box>
-      <Box>
+      <Box textAlign="end">
         Design inspired by{" "}
         <Link href="https://overreacted.io/" isExternal>
           Overreacted
