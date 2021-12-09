@@ -1,13 +1,17 @@
 import Head from "next/head";
 import NextLink from "next/link";
-import { getAllPostIds, getPostData } from "../../lib/posts";
-import ArticleDetails from "../../components/ArticleDetails";
 import { Box, Heading } from "@chakra-ui/layout";
 import { Link } from "@chakra-ui/react";
-import Bio from "../../components/Bio";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import matter from "gray-matter";
+import remarkGfm from "remark-gfm";
+import remarkLint from "remark-lint";
+import rehypeRaw from "rehype-raw";
+import { getAllPostIds, getPostData } from "../../lib/posts";
+import ArticleDetails from "../../components/ArticleDetails";
+import Bio from "../../components/Bio";
+import MDXComponents from "../../components/MDXComponents";
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -21,7 +25,13 @@ export async function getStaticProps({ params }) {
   const source = await getPostData(params.id);
 
   const { content, data } = matter(source.fileContents);
-  const mdxSource = await serialize(content, { scope: data });
+  const mdxSource = await serialize(content, {
+    scope: data,
+    mdxOptions: {
+      remarkPlugins: [remarkGfm, remarkLint],
+      rehypePlugins: [rehypeRaw],
+    },
+  });
   return {
     props: {
       source: mdxSource,
@@ -47,7 +57,7 @@ export default function Post({ source, frontMatter, fileContents }) {
             />
           </Box>
           <Box>
-            <MDXRemote {...source} />
+            <MDXRemote {...source} components={MDXComponents} />
           </Box>
           <Box mt={8}>
             <NextLink href="/" passHref>
