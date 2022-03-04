@@ -8,7 +8,7 @@ const NotFound: NextPage = ({ allPostsData }) => {
   return (
     <>
       <Head>
-        <title>404: This page could not be found - TechPadawan</title>
+        <title>404 – TechPadawan</title>
       </Head>
       <VStack as="article" flexGrow={1} justify="Center">
         <HStack justify="center" mb={8}>
@@ -25,13 +25,14 @@ const NotFound: NextPage = ({ allPostsData }) => {
           </Heading>
           <Box ml={0}>
             <Heading as="h2" size="sm">
-              This page could not be found.
+              Oups, cette page n'existe pas ! Mais n'hésite pas à m'écrire pour
+              me demander de faire un article sur le sujet.
             </Heading>
           </Box>
         </HStack>
         <Box>
           <NextLink href="/" passHref>
-            <Link>← Back to home</Link>
+            <Link>← Retour à la page d'accueil</Link>
           </NextLink>
         </Box>
       </VStack>

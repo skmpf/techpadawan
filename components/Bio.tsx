@@ -10,16 +10,17 @@ const Bio = () => {
       <Img
         borderRadius="full"
         boxSize="3.5rem"
-        src="https://res.cloudinary.com/dzzyt6yhh/image/upload/v1638592074/avatar_ykbmmm.png"
+        src="https://res.cloudinary.com/dzzyt6yhh/image/upload/v1646412241/techpadawan/725D35D9-F0FB-432F-8331-EFDB63F8A3AC_kz9isn.png"
         alt="TechPadawan avatar"
         backgroundColor="brand.100"
       />
       <Text>
-        Personal blog by{" "}
+        Blog personnel de{" "}
         <Link href="https://mobile.twitter.com/thetechpadawan" isExternal>
           TechPadawan
         </Link>
-        <br />I write about tech, web development, and other stuff.
+        <br />
+        Je parle de tech, développement web et d'autres sujets.
       </Text>
     </HStack>
   );

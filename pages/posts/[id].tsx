@@ -61,7 +61,7 @@ export default function Post({ source, frontMatter, fileContents }) {
           </Box>
           <Box mt={8}>
             <NextLink href="/" passHref>
-              <Link>← Back to home</Link>
+              <Link>← Retour à la page d'accueil</Link>
             </NextLink>
           </Box>
         </Box>

@@ -7,7 +7,7 @@ const ArticleDetails = ({ date, fileContents }) => {
       {new Date(date).toLocaleDateString(undefined, {
         dateStyle: "medium",
       })}{" "}
-      • {Math.ceil(readingTime(fileContents).minutes)} min read
+      • {Math.ceil(readingTime(fileContents).minutes)} min de lecture
     </Box>
   );
 };

@@ -12,7 +12,7 @@ const Footer = () => {
         </Link>
       </Box>
       <Box textAlign="end">
-        Design inspired by{" "}
+        Design inspiré de{" "}
         <Link href="https://overreacted.io/" isExternal>
           Overreacted
         </Link>
