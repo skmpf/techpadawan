@@ -1,8 +1,9 @@
 import NextLink from "next/link";
 import { Box, Heading, Link, Text } from "@chakra-ui/layout";
 import ArticleDetails from "./ArticleDetails";
+import { Post } from "../lib/types";
 
-const ArticleCard = ({ id, title, date, spoiler, fileContents }) => {
+const ArticleCard = ({ id, title, date, spoiler, fileContents }: Post) => {
   return (
     <Box as="article">
       <Box as="header">

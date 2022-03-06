@@ -1,10 +1,11 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { PostId, PostData, Post, MatterData } from "./types";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-export function getSortedPostsData() {
+export function getSortedPostsData(): Post[] {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
@@ -21,7 +22,7 @@ export function getSortedPostsData() {
     // Combine the data with the id
     return {
       id,
-      ...matterResult.data,
+      ...(matterResult.data as MatterData),
       fileContents,
     };
   });
@@ -53,7 +54,7 @@ export function getAllPostIds() {
   //     }
   //   }
   // ]
-  return fileNames.map((fileName) => {
+  return fileNames.map((fileName: string) => {
     return {
       params: {
         id: fileName.replace(/\.md$/, ""),
@@ -62,7 +63,7 @@ export function getAllPostIds() {
   });
 }
 
-export async function getPostData(id) {
+export async function getPostData(id: string): Promise<PostData> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 

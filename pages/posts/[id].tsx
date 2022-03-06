@@ -12,6 +12,14 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import ArticleDetails from "../../components/ArticleDetails";
 import Bio from "../../components/Bio";
 import MDXComponents from "../../components/MDXComponents";
+import { Params } from "next/dist/server/router";
+import { MatterData, PostData } from "../../lib/types";
+
+interface PostProps {
+  postData: PostData;
+  frontMatter: MatterData;
+  fileContents: string;
+}
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -21,10 +29,10 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
-  const source = await getPostData(params.id);
+export async function getStaticProps({ params }: Params) {
+  const postData = await getPostData(params.id);
 
-  const { content, data } = matter(source.fileContents);
+  const { content, data } = matter(postData.fileContents);
   const mdxSource = await serialize(content, {
     scope: data,
     mdxOptions: {
@@ -34,14 +42,18 @@ export async function getStaticProps({ params }) {
   });
   return {
     props: {
-      source: mdxSource,
+      postData: mdxSource,
       frontMatter: data,
-      fileContents: source.fileContents,
+      fileContents: postData.fileContents,
     },
   };
 }
 
-export default function Post({ source, frontMatter, fileContents }) {
+export default function Post({
+  postData,
+  frontMatter,
+  fileContents,
+}: PostProps) {
   return (
     <>
       <Head>
@@ -57,7 +69,11 @@ export default function Post({ source, frontMatter, fileContents }) {
             />
           </Box>
           <Box>
-            <MDXRemote {...source} components={MDXComponents} />
+            <MDXRemote
+              compiledSource={""}
+              {...postData}
+              components={MDXComponents}
+            />
           </Box>
           <Box mt={8}>
             <NextLink href="/" passHref>

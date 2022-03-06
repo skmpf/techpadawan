@@ -4,7 +4,11 @@ import { Flex } from "@chakra-ui/react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function Layout({ children }) {
+interface Props {
+  children: React.ReactNode;
+}
+
+export default function Layout({ children }: Props) {
   return (
     <>
       <Head>

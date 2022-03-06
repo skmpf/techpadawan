@@ -1,5 +1,6 @@
 import { extendTheme, theme as base } from "@chakra-ui/react";
-import { mode } from "@chakra-ui/theme-tools";
+import { mode, StyleFunctionProps } from "@chakra-ui/theme-tools";
+import { Dict } from "@chakra-ui/utils";
 
 const theme = extendTheme({
   colors: {
@@ -16,7 +17,7 @@ const theme = extendTheme({
   },
   components: {
     Link: {
-      baseStyle: (props) => ({
+      baseStyle: (props: Dict | StyleFunctionProps) => ({
         color: mode("brand.100", "brand.200")(props),
         textDecoration: "underline",
         _hover: {
@@ -24,7 +25,7 @@ const theme = extendTheme({
         },
       }),
       variants: {
-        header: (props) => ({
+        header: (props: Dict | StyleFunctionProps) => ({
           color: mode("gray.800", "whiteAlpha.900")(props),
         }),
       },

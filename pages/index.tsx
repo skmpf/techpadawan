@@ -5,9 +5,14 @@ import Bio from "../components/Bio";
 
 import { getSortedPostsData } from "../lib/posts";
 import ArticleCard from "../components/ArticleCard";
+import { Post } from "../lib/types";
+
+interface Props {
+  allPostsData: Post[];
+}
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const allPostsData: Post[] = getSortedPostsData();
   return {
     props: {
       allPostsData,
@@ -15,7 +20,7 @@ export async function getStaticProps() {
   };
 }
 
-const Home: NextPage = ({ allPostsData }) => {
+const Home: NextPage<Props> = ({ allPostsData }) => {
   return (
     <>
       <Head>
@@ -25,7 +30,7 @@ const Home: NextPage = ({ allPostsData }) => {
         <Bio />
       </Box>
       <VStack as="main" w="full" h="full" alignItems="flex-start" flexGrow={1}>
-        {allPostsData.map((postData) => (
+        {allPostsData.map((postData: Post) => (
           <ArticleCard key={postData.id} {...postData} />
         ))}
       </VStack>
