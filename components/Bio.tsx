@@ -16,7 +16,7 @@ const Bio = () => {
       />
       <Text>
         Blog personnel de{" "}
-        <Link href="https://mobile.twitter.com/thetechpadawan" isExternal>
+        <Link href="https://sebastienkempf.xyz" isExternal>
           TechPadawan
         </Link>
         <br />

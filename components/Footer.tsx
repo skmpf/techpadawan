@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <HStack as="footer" mt={20} justify="space-between">
       <Box>
-        <Link href="https://mobile.twitter.com/thetechpadawan" isExternal>
-          twitter
+        <Link href="https://mastodon.social/@techpadawan" isExternal>
+          mastodon
         </Link>
       </Box>
       <Box textAlign="end">
