@@ -71,7 +71,15 @@ const MDXComponents = {
   ),
   img: ({ src, alt }: ImageAtr) => (
     <Box width="100%" className="post-image-container" mt={2} mb={2}>
-      <Image src={src || ""} alt={alt} layout="fill" className="image" />
+      <Image
+        src={src || ""}
+        alt={alt}
+        layout="fill"
+        className="image"
+        loading="lazy"
+        sizes="(max-width: 768px) 100vw, 768px"
+        quality={75}
+      />
     </Box>
   ),
 };
